@@ -20,8 +20,13 @@ export default class TodoApp extends Component{
       }
       componentDidMount(){
         let dataStr = JSON.parse(localStorage.getItem('todoList'));
+        let draft  = sessionStorage.getItem('draft');
         if(dataStr){
           this.setState(state => {return {todoList: state.todoList.concat(dataStr)}})
+        }
+        //Add draft inputing to input
+        if(draft){
+          this.inputElement.current.value = draft;
         }
         this.inputElement.current.focus();
       }
@@ -81,6 +86,7 @@ export default class TodoApp extends Component{
       }
       onKeyUp(event){
         let text = event.target.value.trim();
+        sessionStorage.setItem('draft',text); //Set draft input
         if(event.keyCode === 13){
           if(text === ''){
             return;
@@ -91,6 +97,7 @@ export default class TodoApp extends Component{
                 ...this.state.todoList
               ]
             });
+            sessionStorage.removeItem('draft'); //Remove draft input when enter key pressed
             event.target.value = ''; 
           } 
         }
