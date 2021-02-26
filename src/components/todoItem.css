@@ -1,0 +1,70 @@
+.todoItem{
+    font-size: 24px;
+    border-bottom: 1px solid #999;
+    display: flex;
+    padding: 8px 16px;
+}
+.todoItem > p{
+    width: 100%;
+    text-align: center;
+}
+.todoItem--complete > p{
+    text-decoration: line-through;
+    opacity: .4;
+}
+.todoItem > p{
+    margin: 0 0 0 16px;
+}
+.todoItem > img{
+    opacity: .1;
+}
+.todoItem--complete > img{
+    opacity: 1;
+}
+.todoApp > h1{
+    text-align: center;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.todoApp > h2{
+    text-align: center;
+    font-weight: 400;
+    color: #777;
+}
+.todoApp .header{
+    height: 32px;
+    display: flex;
+    padding: 8px 0;
+    border-bottom: 2px solid #999;
+}
+.todoApp .header > input{
+    width: 100%;
+    border: none;
+    font-size: 24px;
+    padding-left: 12px;
+    color: #999;
+}
+.todoApp .header > input:focus{
+    outline: none;
+}
+.todoApp .header > img{
+    margin-left: 16px;
+}
+.todoApp .todoApp-footer{
+    position: relative;
+    border-top: 1px solid #777;
+}
+.todoApp .todoApp-footer--clean{
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    padding: 8px;
+    text-transform: uppercase;
+    font-size: 16px;
+    background-color: #ccc;
+    border: 1px solid #777;
+    border-radius: 5px;
+}
+.todoApp .todoApp-footer--clean:hover{
+    cursor: pointer;
+}
